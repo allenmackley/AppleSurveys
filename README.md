@@ -1,6 +1,6 @@
 # README
 
-## Setup
+## Setup your environment
 
 Note: This project was built and tested in macOS. If you're on Windows or Linux, the setup instructions may be slightly different, but you'll need to install the same dependencies. 
 
@@ -20,43 +20,35 @@ Ruby comes preinstalled on macOs. Check your version of Ruby with `ruby -v`. You
 
 Check your version of Rails with `rails -v`. This project was built with `Rails 5.1.3`. If rails is not installed, install it with `sudo gem install rails`.
 
-Check your version of sqlite with `sqlite3 --version`. macOS comes with it preinstalled. This project was built with `3.24.0`. You can update sqlite with `brew update sqlite3`.
+Check your version of sqlite with `sqlite3 --version`. macOS comes with it preinstalled. This project was built with `3.24.0`. You can update sqlite3 with `brew update sqlite3`.
+
+(Note: I encounted an incompatibility between Rails 5 and the version `1.4.0` of the sqlite3 gem. I resolved it by specifying the gem as `1.3.6`.)
+
+To view the SQL in SQLite with a GUI, download the [Datum App](https://itunes.apple.com/us/app/datum-lite/id901631046?mt=12).
+
+## Prepare the app
 
 Run `bundle install` within the project directory to install its Gemfile dependencies.
 
-Then, `rails s` to start the puma server on localhost.
+Run `rails db:migrate` to create the db and seed it with preliminary data.
 
-In a web browser, navigate to `localhost:3000` and you should see the home page of the app.
+## Start the app
+**Then, `rails s` to start the puma server on localhost.**
+
+**In a web browser, navigate to `localhost:3000` and you should see the home page of the app.**
 
 ## Using the app
 From the home screen you should see a list of a few default surveys that have already been created. You can click on a survey to view it in more detail and to post to it.
 
-To create your own survey, click on "Create New Survey" from the home page. Name the survey and write a Yes/No question, then Submit the survey.
+To create your own survey, click on **Create New Survey** from the home page. Name the survey and write a Yes / No question, then Submit the survey.
 
-Your new survey will then appear on the home page.
+Your new survey will then appear on the home page. The total percentage of yes and no votes will appear next to the survey name.
 
-___
+To view more details for a survey item, click on its name from the home page.
 
+You can click the **Edit** button to edit a survey's name or question. On the edit page you can also delete a survey.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This demonstrates all of the **CRUD** actions within a Rails resource.
 
-Things you may want to cover:
+## Running tests
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
