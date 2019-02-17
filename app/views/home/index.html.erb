@@ -18,8 +18,8 @@
           <td><%= link_to survey.name, survey_path(survey) %></td>
           <td><%= survey.question %></td>
           <td class="surv-item-edit"><%= link_to 'Edit', edit_survey_path(survey) %></td>
-          <td class="surv-item-yes"><%= survey.num_yes ||= 0 %></td>
-          <td class="surv-item-no"><%= survey.num_no ||= 0 %></td>
+          <td class="surv-item-yes"><%= survey.num_yes ||= "0%" %></td>
+          <td class="surv-item-no"><%= survey.num_no ||= "0%" %></td>
         </tr>
       <% end %>
     </table>
