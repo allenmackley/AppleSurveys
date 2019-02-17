@@ -1,0 +1,40 @@
+@import "./vars.scss";
+#surv-form {
+  display: grid;
+  grid-auto-rows: min-content;
+  place-items: center;
+  #error_explanation {
+    width: 100%;
+  }
+  #surv-question {
+    padding: 16px 25px;
+    min-height: 80px;
+  }
+  fieldset {
+    width: 100%;
+    border: none;
+    padding: 5px 0 15px;
+    .field_with_errors {
+      input, textarea {
+        outline: 1px solid red;
+      }
+    }
+    label {
+      padding: 0 0 5px 0;
+      display: inline-block;
+    }
+    input, textarea {
+      width: 100%;
+    }
+  }
+  .surv-input-field {
+    border: 1px solid $gray-verylight;
+    padding: 0 25px;
+    height: 48px;
+    border-radius: 3px;
+    font-size: 13px;
+    @media screen and (max-width: $break-1) {
+      width: 151px;
+    }
+  }
+}

@@ -1,3 +1,48 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,700');
+@import "./vars.scss";
+#surv-home-header {
+  justify-content: center;
+  text-align: center;
+  #surv-create-new {
+    margin: 20px auto;
+  }
+}
+#surv-cont {
+  border-spacing: 0px;
+  width: 100%;
+  tr {
+    border-bottom: 1px solid black;
+  }
+  td, th {
+    padding: 10px;
+    &.surv-item-edit {
+      width: 30px;
+      text-align: center;
+    }
+    &.surv-item-yes, &.surv-item-no {
+      text-align: center;
+    }
+  }
+  td {
+    &:nth-child(2) {
+      width: 50%;
+    }
+  }
+}
+#surv-display {
+  @media screen and (max-width: $break-1) {
+    flex-direction: column;
+    align-items: center;
+    margin: 12px 0 0 0;
+  }
+  #surv-none {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    font-size: 24px;
+    font-weight: bold;
+    color: $gray-light;
+  }
+}
