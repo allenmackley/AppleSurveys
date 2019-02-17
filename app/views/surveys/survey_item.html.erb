@@ -1,0 +1,34 @@
+<section class="surv-left">
+  <header class="surv-sig">
+    <h2 class="surv-title">
+      <%- name %>
+    </h2>
+    <h3 class="surv-symbol">
+      <%- symbol %>
+    </h3>
+  </header>
+  <footer class="surv-nums">
+    <div class="surv-trend">
+      <div class="surv-trend-arrow <%- trend %>"></div>
+      <div class="surv-trend-perc <%- trend %>">
+        <%- change %> (<%- perc %>%)
+      </div>
+    </div>
+    <div class="surv-price">
+      $<%- price %>
+    </div>
+  </footer>
+</section>
+<aside class="surv-right">
+  <div class="surv-vert">
+    <div class="surv-vert-arrow" style="top: <%- range %>%"></div>
+  </div>
+  <div class="surv-vert-prices">
+    <div class="surv-vert-high">
+      $<%- high %>
+    </div>
+    <div class="surv-vert-low">
+      $<%- low %>
+    </div>
+  </div>
+</aside>

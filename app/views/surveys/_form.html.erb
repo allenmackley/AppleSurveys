@@ -1,0 +1,36 @@
+<%= form_with model: @survey, local: true, id: 'surv-form' do |form| %>
+  <% if @survey.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@survey.errors.count, "error") %> prohibited
+        this survey from being saved:
+      </h2>
+      <ul>
+        <% @survey.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <fieldset>
+    <%= form.label :name %><br>
+    <%= form.text_field :name,
+      title: "Must include valid alphanumeric characters.",
+      class: 'surv-input-field', 
+      id: 'surv-name',
+      placeholder: "Survey Name..." 
+    %>
+  </fieldset>
+  <fieldset>
+    <%= form.label :question %><br>
+    <%= form.text_area :question,
+      title: "Must include valid alphanumeric characters.",
+      class: 'surv-input-field', 
+      id: 'surv-question',
+      placeholder: "Yes / No Question..."
+    %>
+  </fieldset>
+  <fieldset>
+    <%= form.submit class: 'surv-btn' %>
+  </fieldset>
+<% end %>
