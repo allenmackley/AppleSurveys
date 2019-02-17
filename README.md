@@ -52,3 +52,32 @@ This demonstrates all of the **CRUD** actions within a Rails resource.
 
 ## Running tests
 
+## Solving Scalability Issues
+* Most scalability issues derive from a poor understanding of the underlying architecture and database technology, not the choice of language. 
+* By the time you've scaled out an infrastructure with techniques such as caching, memory stores, load balancing, and microservices, the underlying language makes little difference.
+### Infrastructure
+* Horizontal scaling, tweaking settings in Phusion Passenger, and using a load balancer.
+* Caching data in a memory store such Memcache or Redis.
+* Design microservices intelligently, centering the design and purpose of each service around a focused category of data.
+* Utilize a CDN and client-side caching and cache-invalidation.
+* If necessary, separate front-end asset servers from back-end api servers.
+* Utilize HTTP2.
+* Convert synchronous HTTP requests to ansynchronous ones, offloaded to background worker threads, using ActiveJob or SideKiq.
+### Database
+* Great database schema design from the beginning, utilizing indexes, and finding the best balance b etween normalized and denormalized data.
+* Write efficient SQL or otherwise be aware of the SQL being written by the ORM.
+* Use a NoSQL database for easier sharding.
+* Use a data loader with the ORM to batch queries and prevent an 1+N problem, such as BatchLoader.
+* Utilize Rails eager loading.
+### Code & Maintainability
+* Keep controllers as light as possible.
+* Business logic should stay in models, modules, and services.
+* Make use of template partials.
+* Maintaining high test code coverage percentage as a requirement.
+* Separate unit tests from integration tests so that the integration tests don't slow down the unit tests, encouraging developers to run the test suite as often as possible in development.
+* SOLID design principals, particularly the Single Responsibility Principal.
+* Execute specialized tasks that are very CPU intensive in another languge.
+* Effective logging tools to help in identifying problems and bottlenecks, such as Bullet, New Relic or Skylight.
+
+## Advanced Concepts
+* Scopes
