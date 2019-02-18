@@ -29,7 +29,7 @@ class SurveysController < ApplicationController
     @survey = Survey.find(params[:id])
    
     if @survey.update(survey_params)
-      redirect_to @survey
+      redirect_to root_path
     else
       render 'edit'
     end
