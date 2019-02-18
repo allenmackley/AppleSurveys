@@ -1,0 +1,22 @@
+#surv-table {
+  border-spacing: 0px;
+  width: 100%;
+  tr {
+    border-bottom: 1px solid black;
+  }
+  td, th {
+    padding: 10px;
+    &.surv-item-edit {
+      width: 30px;
+      text-align: center;
+    }
+    &.surv-item-yes, &.surv-item-no {
+      text-align: center;
+    }
+  }
+  td {
+    &:nth-child(2) {
+      width: 50%;
+    }
+  }
+}

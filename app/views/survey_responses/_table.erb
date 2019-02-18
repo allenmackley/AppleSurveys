@@ -1,0 +1,23 @@
+<% if ! @surveys.empty? %>
+  <table id="surv-table" border="1px">
+    <tr>
+      <th>Name</th>
+      <th colspan="2">Question</th>
+      <th>Yes</th>
+      <th>No</thL>
+    </tr>
+    <% @surveys.each do |survey| %>
+      <tr>
+        <td><%= link_to survey.name, survey_path(survey) %></td>
+        <td><%= survey.question %></td>
+        <td class="surv-item-edit"><%= link_to 'Edit', edit_survey_path(survey) %></td>
+        <td class="surv-item-yes"><%= survey.perc_yes %>%</td>
+        <td class="surv-item-no"><%= survey.perc_no %>%</td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <section id="surv-none">
+    No surveys yet!
+  </section>
+<% end %>
