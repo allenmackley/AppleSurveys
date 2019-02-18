@@ -1,0 +1,31 @@
+<h2>Survey Responses</h2>
+<h3>
+  <%= @survey.name %>
+</h3>
+<p>
+  <i><%= @survey.question %></i>
+</p>
+<table id="surv-response-table" class="surv-table" border="1px">
+  <tr>
+    <th>User</th>
+    <th>Answer</th>
+    <th>Time</th>
+  </tr>
+  <% if @survey.survey_responses.size != 0 %>
+    <% @survey.survey_responses.each do |survey_response| %>
+      <tr>
+        <td>John Doe</td>
+        <td><%= survey_response.answer === 1 ? 'Yes' : 'No' %></td>
+        <td>
+          <%= survey_response.created_at.in_time_zone.strftime("%b %e, %Y - %l:%M%P UTC") %>
+        </td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="3">No responses yet.</td>
+    </tr>
+  <% end %>
+</table>
+<hr>
+<%= link_to 'Home', controller: 'home' %>

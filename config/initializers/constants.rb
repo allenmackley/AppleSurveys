@@ -1,0 +1,1 @@
+DEMO_USER = User.find(3)

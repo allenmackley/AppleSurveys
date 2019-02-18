@@ -1,4 +1,8 @@
 class SurveyResponsesController < ApplicationController
+  def index
+    @survey = Survey.find(params[:survey_id])
+  end
+  
   def show
     @survey_response = SurveyResponse.find(params[:id])
   end
@@ -14,8 +18,9 @@ class SurveyResponsesController < ApplicationController
       text_answer === 'YES' ? 1 : 0
     end
     def survey_response_params
-      allowed_params = params.require(:survey_response).permit(:answer)
-      allowed_params[:answer] = text_to_bool allowed_params[:answer]
-      allowed_params
+      safe_params = params.require(:survey_response).permit(:answer)
+      safe_params[:answer]  = text_to_bool safe_params[:answer]
+      safe_params[:user_id] = @user.id
+      safe_params
     end
 end

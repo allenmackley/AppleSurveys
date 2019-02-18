@@ -1,5 +1,6 @@
 class Survey < ApplicationRecord
   has_many :survey_responses
+  belongs_to :user
   validates :name, presence: true
   validates :question, presence: true
   after_initialize :count_responses

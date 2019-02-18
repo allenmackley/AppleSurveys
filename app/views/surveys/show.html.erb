@@ -1,13 +1,12 @@
 <main>
-  <p>
-    <strong>Name:</strong>
+  <h2>
+    <strong>Survey:</strong>
     <%= @survey.name %>
-  </p>
+  </h2>
   <p>
-    <strong>Question:</strong>
-    <%= @survey.question %>
+    <i><%= @survey.question %></i>
   </p>
-
+  <hr>
   <%= render 'form_answer' %>
   <hr>
   <%= link_to 'Home', controller: 'home' %>

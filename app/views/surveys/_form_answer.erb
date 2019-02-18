@@ -1,11 +1,13 @@
-<%= form_with model: [@survey, @survey.survey_responses.build], local: true, id: 'surv-form-answer', class: 'surv-form' do |form| %>
-  <fieldset>
+<%= form_with model: [@survey, @survey.survey_responses.build], local: true, id: 'surv-form-answer', class: "surv-form" do |form| %>
+  <div class="surv-radio">
     <%= form.label :answer_yes, "Yes" %><br>
-    <%= form.radio_button :answer, "YES" %>
-  </fieldset>
-  <fieldset>
+    <%= form.radio_button :answer, "YES", checked: true %>
+  </div>
+  <div class="surv-radio">
     <%= form.label :answer_no, "No" %><br>
     <%= form.radio_button :answer, "NO" %>
-  </fieldset>
-  <%= form.submit class: "surv-btn" %>
+  </div>
+  <div class="surv-submit">
+    <%= form.submit "Submit", class: "surv-btn" %>
+  </div>
 <% end %>

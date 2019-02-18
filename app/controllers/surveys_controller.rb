@@ -44,6 +44,8 @@ class SurveysController < ApplicationController
 
   private
     def survey_params
-      params.require(:survey).permit(:name, :question)
+      safe_params = params.require(:survey).permit(:name, :question)
+      safe_params[:user_id] = @user.id
+      safe_params
     end
 end

@@ -1,18 +1,4 @@
 @import "./vars.scss";
-
-#surv-form-answer {
-  grid-template-columns: 50px 50px auto;
-  label, input {
-    cursor: pointer;
-  }
-}
-#surv-form-edit {
-  grid-auto-rows: min-content;
-  #surv-question {
-    padding: 16px 25px;
-    min-height: 80px;
-  }
-}
 .surv-form {
   display: grid;
   place-items: center;
@@ -32,7 +18,7 @@
       padding: 0 0 5px 0;
       display: inline-block;
     }
-    input, textarea {
+    input[type="text"], textarea {
       width: 100%;
     }
   }
@@ -42,5 +28,26 @@
     height: 48px;
     border-radius: 3px;
     font-size: 13px;
+  }
+}
+#surv-form-answer {
+  grid-row-gap: 20px;
+  grid-template-columns: 60px 60px auto;
+  margin: 15px 0 15px 0;
+  .surv-radio {
+    padding: 0 20px 0 0;
+  }
+  .surv-submit {
+    place-self: self-end;
+  }
+  label, input {
+    cursor: pointer;
+  }
+}
+#surv-form-edit {
+  grid-auto-rows: min-content;
+  #surv-question {
+    padding: 16px 25px;
+    min-height: 80px;
   }
 }

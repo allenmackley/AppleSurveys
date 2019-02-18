@@ -1,5 +1,6 @@
 <% if ! @surveys.empty? %>
-  <table id="surv-table" border="1px">
+  <h3>Results:</h3>
+  <table class="surv-table" border="1px">
     <tr>
       <th>Name</th>
       <th colspan="2">Question</th>
@@ -11,8 +12,12 @@
         <td><%= link_to survey.name, survey_path(survey) %></td>
         <td><%= survey.question %></td>
         <td class="surv-item-edit"><%= link_to 'Edit', edit_survey_path(survey) %></td>
-        <td class="surv-item-yes"><%= survey.perc_yes %>%</td>
-        <td class="surv-item-no"><%= survey.perc_no %>%</td>
+        <td class="surv-item-yes">
+          <%= link_to "#{survey.perc_yes}%", survey_survey_responses_path(survey) %>
+        </td>
+        <td class="surv-item-no">
+          <%= link_to "#{survey.perc_no}%", survey_survey_responses_path(survey) %>
+        </td>
       </tr>
     <% end %>
   </table>
