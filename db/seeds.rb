@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Survey.create(name: "Newton", question: "Does the moon rotate around the earth by the same force that an apple falls from a tree?")
+Survey.create(name: "Math", question: "Does 1 + 1 equal 2?")

@@ -1,0 +1,9 @@
+<h2>Thank you for completing the survey!</h2>
+<p>
+  You answered: <b><%= @survey_response.answer === 1 ? 'Yes' : 'No' %></b>
+</p>
+<p>
+  Your response has been recorded.
+</p>
+<hr>
+<%= link_to 'Home', controller: 'home' %>

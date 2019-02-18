@@ -1,4 +1,4 @@
-<%= form_with model: @survey, local: true, id: 'surv-form' do |form| %>
+<%= form_with model: @survey, local: true, id: 'surv-form-edit', class: 'surv-form' do |form| %>
   <% if @survey.errors.any? %>
     <div id="error_explanation">
       <h2>

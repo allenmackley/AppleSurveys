@@ -4,6 +4,7 @@
   </h1>
   <%= link_to 'Create New Survey', new_survey_path, class: 'surv-btn', id: 'surv-create-new' %>
 </header>
+<hr>
 <main id="surv-display">
   <% if ! @surveys.empty? %>
     <table id="surv-cont" border="1px">
@@ -18,8 +19,8 @@
           <td><%= link_to survey.name, survey_path(survey) %></td>
           <td><%= survey.question %></td>
           <td class="surv-item-edit"><%= link_to 'Edit', edit_survey_path(survey) %></td>
-          <td class="surv-item-yes"><%= survey.num_yes ||= "0%" %></td>
-          <td class="surv-item-no"><%= survey.num_no ||= "0%" %></td>
+          <td class="surv-item-yes"><%= survey.perc_yes %>%</td>
+          <td class="surv-item-no"><%= survey.perc_no %>%</td>
         </tr>
       <% end %>
     </table>

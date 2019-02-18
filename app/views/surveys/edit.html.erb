@@ -1,9 +1,9 @@
 <h1>Edit Survey</h1>
  
 <%= render 'form' %>
-
+<hr>
 <%= link_to 'Home', surveys_path %>
-
+|
 <%= link_to 'Delete Survey', survey_path(@survey),
   method: :delete,
   data: { confirm: 'Are you sure?' } 
