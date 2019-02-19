@@ -60,9 +60,8 @@ Next, go ahead and vote on a survey. As per the requirements of the assessment, 
 
 After voting on a survey, the balance of percentages between "yes" and "no" responses to the survey will be reflected on the home page. Click on one of the perent readings to see a log of every vote, including the user who made it, the response, and the time it was made. 
 
-
-
 ## Running tests
+From within the project directory, run `rails test`.
 
 # Other Notes on Rails Scalability
 ## Solving Scalability Issues

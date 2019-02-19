@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  user_id: 1
-  survey_id: 1
-  answer: false
-
-two:
-  user_id: 1
-  survey_id: 1
-  answer: false
+response1:
+  user: allen
+  survey: newton
+  answer: 1
+response2:
+  user: john
+  survey: newton
+  answer: 1
+response3:
+  user: test
+  survey: newton
+  answer: 0

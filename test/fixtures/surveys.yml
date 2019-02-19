@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  question: MyString
-
-two:
-  name: MyString
-  question: MyString
+newton:
+  user: allen
+  name: Newton
+  question: Does the moon fall toward the earth by the same force that an apple falls from a tree?
+math:
+  user: allen
+  name: Math
+  question: Does 1 + 1 equal 2?
