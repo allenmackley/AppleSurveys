@@ -21,12 +21,15 @@ class SurveyResponsesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should POST to survey_responses create" do
-    post survey_survey_responses_url(surveys(:newton)), params: {
-      survey_response: {
-        answer: 'YES'
+    newton = surveys(:newton)
+    assert_difference("SurveyResponse.count", 1) do
+      post survey_survey_responses_url(newton), params: {
+        survey_response: {
+          answer: 'YES'
+        }
       }
-    }
-    assert_response :redirect
+    end
+    assert_redirected_to survey_survey_response_url(newton, SurveyResponse.last)
   end
   test "should not allow PATCH to undefined survey_responses update" do
     assert_raises(AbstractController::ActionNotFound) do
