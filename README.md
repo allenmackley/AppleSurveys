@@ -1,7 +1,7 @@
 # README
 
 ## Quickstart
-1. Unzip the project to your user directory.
+1. Clone with `git clone https://github.com/allenmackley/AppleSurveys.git` or if you have the zip file, unzip the project to your user directory.
 2. `cd ~/apple_surveys`
 3. `bundle install`
 4. `rails db:reseed`
